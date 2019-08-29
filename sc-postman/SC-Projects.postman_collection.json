@@ -1,0 +1,980 @@
+{
+	"info": {
+		"_postman_id": "aedf6229-0310-4fa9-9286-bbd26c8c0ce3",
+		"name": "SC-Projects",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "消息服务",
+			"item": [
+				{
+					"name": "创建rabbit通用消息",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"廖伟\",\n\t\"age\": 18,\n\t\"address\": \"重庆市\"\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:8002/rabbit/common/send",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "8002",
+							"path": [
+								"rabbit",
+								"common",
+								"send"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "创建rabbit理财订单消息",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"orderId\": \"201907150001\",\n\t\"orderType\": \"fina\",\n\t\"productName\": \"天添金理财001期\",\n\t\"orderAmt\": 1000000\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:8002/rabbit/order/send",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "8002",
+							"path": [
+								"rabbit",
+								"order",
+								"send"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "创建rabbit贷款订单消息",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"orderId\": \"201907150002\",\n\t\"orderType\": \"loan\",\n\t\"productName\": \"愉快贷\",\n\t\"orderAmt\": 300000\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:8002/rabbit/order/send",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "8002",
+							"path": [
+								"rabbit",
+								"order",
+								"send"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "创建Stream通用消息",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"廖伟\",\n\t\"age\": 18,\n\t\"address\": \"重庆市\"\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:8002/stream/common/send",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "8002",
+							"path": [
+								"stream",
+								"common",
+								"send"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "创建Stream贷款订单消息",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"orderId\": \"201907150002\",\n\t\"orderType\": \"loan\",\n\t\"productName\": \"愉快贷\",\n\t\"orderAmt\": 300000\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:8002/stream/order/send",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "8002",
+							"path": [
+								"stream",
+								"order",
+								"send"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "创建Stream理财订单消息",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"orderId\": \"201907150001\",\n\t\"orderType\": \"fina\",\n\t\"productName\": \"天添金理财001期\",\n\t\"orderAmt\": 1000000\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:8002/stream/order/send",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "8002",
+							"path": [
+								"stream",
+								"order",
+								"send"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "消息服务"
+		},
+		{
+			"name": "订单服务",
+			"item": [
+				{
+					"name": "创建订单（超时测试）",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"customerIdNo\": \"500234198401250022\",\n  \"customerIdType\": 0,\n  \"customerName\": \"廖伟\",\n  \"orderDetailDTOList\": [\n    {\n      \"buyAmount\": 10000,\n      \"productId\": 2\n    },\n    {\n      \"buyAmount\": 120000,\n      \"productId\": 3\n    },\n    {\n      \"buyAmount\": 1000,\n      \"productId\": 5\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:8086/order/create",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "8086",
+							"path": [
+								"order",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "创建订单（正常）",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"customerIdNo\": \"500234198401250022\",\n  \"customerIdType\": 0,\n  \"customerName\": \"廖伟\",\n  \"orderDetailDTOList\": [\n    {\n      \"buyAmount\": 10000,\n      \"productId\": 2\n    },\n    {\n      \"buyAmount\": 120000,\n      \"productId\": 3\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:8086/order/create",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "8086",
+							"path": [
+								"order",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "删除订单",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://{{host}}:8086/order/delete?ids={{ids1}}&ids={{ids2}}",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "8086",
+							"path": [
+								"order",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "{{ids1}}"
+								},
+								{
+									"key": "ids",
+									"value": "{{ids2}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "完结订单",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  {{ids1}}, {{ids2}}\n]"
+						},
+						"url": {
+							"raw": "http://{{host}}:8086/order/finish",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "8086",
+							"path": [
+								"order",
+								"finish"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "获取环境变量",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{host}}:8086/env/get",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "8086",
+							"path": [
+								"env",
+								"get"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "订单服务"
+		},
+		{
+			"name": "配置中心",
+			"item": [
+				{
+					"name": "更新配置",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/actuator/bus-refresh",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"actuator",
+								"bus-refresh"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "配置中心"
+		},
+		{
+			"name": "产品服务",
+			"item": []
+		},
+		{
+			"name": "网关服务",
+			"item": [
+				{
+					"name": "rest mode",
+					"item": [
+						{
+							"name": "通过网关查询产品信息",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "1234567890",
+										"type": "text"
+									},
+									{
+										"key": "productId",
+										"value": "888888",
+										"type": "text"
+									},
+									{
+										"key": "Cookie",
+										"value": "abc=123;",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:9000/product/product/list",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"product",
+										"product",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "通过网关查询产品信息（自定义重复接口）",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "1234567890",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:9000/repeat-product/product/list",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"repeat-product",
+										"product",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "通过网关查询订单服务配置",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "1234567890",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:9000/config/order-dev.yml",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"config",
+										"order-dev.yml"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "通过网关查询订单服务环境变量",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "1234567890",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:9000/order/env/get",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"order",
+										"env",
+										"get"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "通过网关创建订单（正常）",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "1234567890",
+										"type": "text"
+									},
+									{
+										"key": "productId",
+										"value": "888888",
+										"type": "text"
+									},
+									{
+										"key": "Cookie",
+										"value": "abc=123;",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"customerIdNo\": \"500234198401250022\",\n  \"customerIdType\": 0,\n  \"customerName\": \"廖伟\",\n  \"orderDetailDTOList\": [\n    {\n      \"buyAmount\": 10000,\n      \"productId\": 2\n    },\n    {\n      \"buyAmount\": 120000,\n      \"productId\": 3\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/order/order/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"order",
+										"order",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "通过网关创建订单（超时测试）",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "1234567890",
+										"type": "text"
+									},
+									{
+										"key": "productId",
+										"value": "888888",
+										"type": "text"
+									},
+									{
+										"key": "Cookie",
+										"value": "abc=123;",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"customerIdNo\": \"500234198401250022\",\n  \"customerIdType\": 0,\n  \"customerName\": \"廖伟\",\n  \"orderDetailDTOList\": [\n    {\n      \"buyAmount\": 10000,\n      \"productId\": 2\n    },\n    {\n      \"buyAmount\": 120000,\n      \"productId\": 3\n    },\n    {\n      \"buyAmount\": 1000,\n      \"productId\": 5\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/order/order/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"order",
+										"order",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "通过网关创建订单（业务报错测试）",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "1234567890",
+										"type": "text"
+									},
+									{
+										"key": "productId",
+										"value": "888888",
+										"type": "text"
+									},
+									{
+										"key": "Cookie",
+										"value": "abc=123;",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"customerIdNo\": \"500234198401250022\",\n  \"customerIdType\": 0,\n  \"customerName\": \"廖伟\",\n  \"orderDetailDTOList\": [\n    {\n      \"buyAmount\": 10000,\n      \"productId\": 2\n    },\n    {\n      \"buyAmount\": 120000,\n      \"productId\": 3\n    },\n    {\n      \"buyAmount\": 1000,\n      \"productId\": 5\n    },\n    {\n      \"buyAmount\": 3000,\n      \"productId\": 6\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/order/order/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"order",
+										"order",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "通过网关创建订单（系统报错测试）",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "1234567890",
+										"type": "text"
+									},
+									{
+										"key": "productId",
+										"value": "888888",
+										"type": "text"
+									},
+									{
+										"key": "Cookie",
+										"value": "abc=123;",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"customerIdNo\": \"500234198401250022\",\n  \"customerIdType\": 0,\n  \"customerName\": \"廖伟\",\n  \"orderDetailDTOList\": [\n    {\n      \"buyAmount\": 10000,\n      \"productId\": 2\n    },\n    {\n      \"buyAmount\": 120000,\n      \"productId\": 3\n    },\n    {\n      \"buyAmount\": 1000,\n      \"productId\": 5\n    },\n    {\n      \"buyAmount\": 3000,\n      \"productId\": 6\n    },\n    {\n      \"buyAmount\": 5000,\n      \"productId\": 7\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/order/order/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"order",
+										"order",
+										"create"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "RPC model",
+					"item": [
+						{
+							"name": "通过网关创建订单（正常）",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"type": "text",
+										"value": "1234567890"
+									},
+									{
+										"key": "productId",
+										"type": "text",
+										"value": "888888"
+									},
+									{
+										"key": "Cookie",
+										"type": "text",
+										"value": "abc=123;"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"customerIdNo\": \"500234198401250022\",\n  \"customerIdType\": 0,\n  \"customerName\": \"廖伟\",\n  \"orderDetailDTOList\": [\n    {\n      \"buyAmount\": 10000,\n      \"productId\": 2\n    },\n    {\n      \"buyAmount\": 120000,\n      \"productId\": 3\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "http://localhost:9000/buy-rest/order/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9000",
+									"path": [
+										"buy-rest",
+										"order",
+										"create"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "查询服务",
+			"item": [
+				{
+					"name": "查询在售产品列表",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8285/query/product/on-sale",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8285",
+							"path": [
+								"query",
+								"product",
+								"on-sale"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "查询订单详情",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8285/query/order/list?ids=111&ids=222",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8285",
+							"path": [
+								"query",
+								"order",
+								"list"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "111"
+								},
+								{
+									"key": "ids",
+									"value": "222"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "查询环境变量服务",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8285/query/env/get",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8285",
+							"path": [
+								"query",
+								"env",
+								"get"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "购买服务",
+			"item": [
+				{
+					"name": "完结订单",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  {{ids1}}, {{ids2}}\n]"
+						},
+						"url": {
+							"raw": "http://localhost:8286/order/finish",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8286",
+							"path": [
+								"order",
+								"finish"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "创建订单（正常）",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"customerIdNo\": \"500234198401250022\",\n  \"customerIdType\": 0,\n  \"customerName\": \"廖伟\",\n  \"orderDetailDTOList\": [\n    {\n      \"buyAmount\": 10000,\n      \"productId\": 2\n    },\n    {\n      \"buyAmount\": 120000,\n      \"productId\": 3\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8286/order/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8286",
+							"path": [
+								"order",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "删除订单",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8286/order/delete?ids={{ids1}}&ids={{ids2}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8286",
+							"path": [
+								"order",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "{{ids1}}"
+								},
+								{
+									"key": "ids",
+									"value": "{{ids2}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
