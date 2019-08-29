@@ -1,0 +1,13 @@
+version: "3"
+services:
+  rabbitmq:
+    image: rabbitmq:3.7.17-management
+    restart: unless-stopped
+    container_name: sc-rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - /mnt/sda1/rabbitmq/database:/var/lib/rabbitmq/mnesia/rabbit@my-rabbit

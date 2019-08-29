@@ -1,0 +1,14 @@
+version: "2"
+services:
+  mysql:
+    image: mysql:5.7.24
+    restart: unless-stopped
+    container_name: sc-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root123
+      - TZ=Asia/Shanghai
+    ports:
+      - "3306:3306"
+    volumes:
+      - /mnt/sda1/mysql/conf:/etc/mysql/conf.d
+      - /mnt/sda1/mysql/data:/var/lib/mysql    

@@ -1,0 +1,2 @@
+# 需要在docker仓库所在的容器中使用
+registry garbage-collect /etc/docker/registry/config.yml 

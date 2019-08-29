@@ -1,0 +1,30 @@
+version: "2"
+services:
+  docker-registry:
+    image: registry:2
+    restart: always
+    container_name: docker-registry
+    environment:
+      - REGISTRY_HTTP_TLS_CERTIFICATE=/certs/docker-registry.crt
+      - REGISTRY_HTTP_TLS_KEY=/certs/docker-registry.key
+    ports:
+      - 5000:5000
+    volumes:
+      - /Users/liaowei/Work/docker/sc-projects/sc-mount/docker-registry/registry:/var/lib/registry
+      - /Users/liaowei/Work/docker/sc-projects/sc-base-station/sc-docker-registry/config/config.yml:/etc/docker/registry/config.yml
+      - /Users/liaowei/Work/docker/sc-projects/sc-base-station/sc-docker-registry/certs:/certs
+  docker-registry-frontend:
+    image: konradkleine/docker-registry-frontend:v2
+    restart: always
+    container_name: docker-registry-frontend
+    environment:
+      - ENV_DOCKER_REGISTRY_HOST=docker-registry
+      - ENV_DOCKER_REGISTRY_PORT=5000
+      - ENV_DOCKER_REGISTRY_USE_SSL=1
+      - ENV_MODE_BROWSE_ONLY=false
+      - ENV_USE_SSL='yes'
+    ports:
+      - 443:443
+    volumes:
+      - /Users/liaowei/Work/docker/sc-projects/sc-base-station/sc-docker-registry/certs/server.crt:/etc/apache2/server.crt
+      - /Users/liaowei/Work/docker/sc-projects/sc-base-station/sc-docker-registry/certs/server.key:/etc/apache2/server.key

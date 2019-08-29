@@ -1,0 +1,20 @@
+version: '3'
+services:
+  zipkin:
+    image: openzipkin/zipkin:2.16.1
+    restart: unless-stopped
+    container_name: sc-zipkin
+    ports:
+      - 9411:9411
+    environment:
+      - STORAGE_TYPE=elasticsearch
+      - ES_HOSTS=http://192.168.99.108:9200
+  dependencies:
+    image: openzipkin/zipkin-dependencies:2.3.2
+    restart: unless-stopped
+    container_name: sc-zipkin-dependencies
+    environment:
+      - STORAGE_TYPE=elasticsearch
+      - ES_HOSTS=http://192.168.99.108:9200
+      - ES_NODES_WAN_ONLY=true
+    entrypoint: crond -f

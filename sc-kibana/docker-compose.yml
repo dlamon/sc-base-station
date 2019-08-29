@@ -1,0 +1,12 @@
+version: '3'
+services:
+  kibana:
+    image: kibana:6.8.2
+    restart: unless-stopped
+    container_name: sc-kibana
+    ports:
+      - 5601:5601
+    environment:
+      - TZ=Asia/Shanghai
+    environment:
+      ELASTICSEARCH_HOSTS: http://192.168.99.108:9200

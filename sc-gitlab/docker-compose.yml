@@ -1,0 +1,18 @@
+version: "3"
+services:
+  gitlab:
+    image: gitlab/gitlab-ce:12.1.6-ce.0
+    restart: unless-stopped
+    container_name: sc-gitlab
+    hostname: '192.168.99.108'
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://192.168.99.108'
+        # Add any other gitlab.rb configuration here, each on its own line
+    volumes:
+      - /mnt/sda1/gitlab/config:/etc/gitlab
+      - /mnt/sda1/gitlab/logs:/var/log/gitlab
+      - /mnt/sda1/gitlab/data:/var/opt/gitlab
